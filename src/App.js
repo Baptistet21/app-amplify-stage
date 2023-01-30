@@ -4,6 +4,7 @@ import {Amplify} from "aws-amplify";
 import {withAuthenticator} from "@aws-amplify/ui-react";
 import {Auth} from "aws-amplify";
 import config from './aws-exports';
+import ProfileAppBar from "./Composant/ProfileAppBar";
 
 Amplify.configure(config);
 function App() {
@@ -17,6 +18,7 @@ function App() {
     },[])
 
     return User ? <div>
+        <ProfileAppBar User={User}></ProfileAppBar>
 
     </div> : null
 }
